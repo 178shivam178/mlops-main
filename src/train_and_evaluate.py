@@ -25,6 +25,8 @@ def train_and_evaluate(config_path):
     random_state = config["base"]["random_state"]
     model_dir = config["model_dir"]
 
+    model_dir_deploy = config["model_dir_deploy"]
+
     alpha = config["estimators"]["ElasticNet"]["params"]["alpha"]
     l1_ratio = config["estimators"]["ElasticNet"]["params"]["l1_ratio"]
 
@@ -77,8 +79,11 @@ def train_and_evaluate(config_path):
 
     os.makedirs(model_dir, exist_ok=True)
     model_path = os.path.join(model_dir, "model.joblib")
-
     joblib.dump(lr, model_path)
+
+    os.makedirs(model_dir_deploy, exist_ok=True)
+    model_path_deploy= os.path.join(model_dir_deploy, "model.joblib")
+    joblib.dump(lr, model_path_deploy)
 
 
 

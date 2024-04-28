@@ -53,8 +53,8 @@ stages:
       size: 74913
     - path: src/train_and_evaluate.py
       hash: md5
-      md5: 98741c55abd77e8a17098211cf960b50
-      size: 2603
+      md5: 4c1b7f5b25fb8d00192dcf16d3bb75f6
+      size: 2817
     params:
       params.yaml:
         estimators.ElasticNet.params.alpha: 0.9
